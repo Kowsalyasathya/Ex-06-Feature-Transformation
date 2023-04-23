@@ -19,9 +19,10 @@ Apply Feature Transformation techniques to all the features of the data set
 
 Print the transformed features.
 
-PROGRAM:
+## PROGRAM:
 
 NAME  :KOWSALYA M
+
 REGISTER NUMBER:212222230069.
 
 # IMPORT LIBRARIES
@@ -32,13 +33,9 @@ import statsmodels.api as sm
 import scipy.stats as stats
 from sklearn.preprocessing import QuantileTransformer
 
-## Reading CSV File
-
 # READ CSV FILES
 df=pd.read_csv("/content/Data_to_Transform.csv")
 df
-
-## Basic Process
 
 ## BASIC PROCESS:
 ```
