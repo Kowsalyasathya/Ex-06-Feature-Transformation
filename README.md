@@ -26,6 +26,7 @@ NAME  :KOWSALYA M
 REGISTER NUMBER:212222230069.
 
 # IMPORT LIBRARIES
+```
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -33,9 +34,10 @@ import statsmodels.api as sm
 import scipy.stats as stats
 from sklearn.preprocessing import QuantileTransformer
 
+```
 # READ CSV FILES
-df=pd.read_csv("/content/Data_to_Transform.csv")
-df
+```df=pd.read_csv("/content/Data_to_Transform.csv")
+df```
 
 ## BASIC PROCESS:
 ```
@@ -61,74 +63,74 @@ df.duplicated()
 ```
 sm.qqplot(df['Highly Positive Skew'],fit=True,line='45')
 plt.show()
-
+```
 # HIGHLY NEGATIVE SKEW:
+```
 sm.qqplot(df['Highly Negative Skew'],fit=True,line='45')
 plt.show()
-
-# MODERATE POSITIVE SKEW
+```
+# MODERATE POSITIVE SKEW:
+```
 sm.qqplot(df['Moderate Positive Skew'],fit=True,line='45')
 plt.show()
-
-# MODERTE NEGATIVE SKEW
+```
+# MODERTE NEGATIVE SKEW:
+```
 sm.qqplot(df['Moderate Negative Skew'],fit=True,line='45')
 plt.show()
-
-Log Transformation
-
+```
 # LOG TRANSFORMATION
 # HIGHLY POSITIVE SKEW
+```
 df['Highly Positive Skew'] = np.log(df['Highly Positive Skew'])
 
 sm.qqplot(df['Highly Positive Skew'],fit=True,line='45')
 plt.show()
-
-# MODERATE POSITIVE SKEW
+```
+# MODERATE POSITIVE SKEW:
+```
 df['Moderate Positive Skew'] = np.log(df['Moderate Positive Skew'])
 
 sm.qqplot(df['Moderate Positive Skew'],fit=True,line='45')
 plt.show()
-
-Reciprocal Transformation
+```
 
 # RECIPROCAL TRANSFORMATION
 # HIGHLY POSITIVE SKEW
-df['Highly Positive Skew'] = 1/df['Highly Positive Skew']
+```df['Highly Positive Skew'] = 1/df['Highly Positive Skew']
 
 sm.qqplot(df['Highly Positive Skew'],fit=True,line='45')
 plt.show()
-
-Square Root Transformation
-
+```
 # SQUARE ROOT TRANSFORMATION
 # HIGHLY POSITIVE SKEW
-df['Highly Positive Skew'] = df['Highly Positive Skew']**(1/1.2)
+```df['Highly Positive Skew'] = df['Highly Positive Skew']**(1/1.2)
 
 sm.qqplot(df['Highly Positive Skew'],fit=True,line='45')
 plt.show()
-
-Power Transformation
+```
 
 # POWER TRANSFORMATION
 # MODERATE POSITIVE SKEW
+```
 df['Moderate Positive Skew_1'], parameters=stats.yeojohnson(df['Moderate Positive Skew'])
 
 sm.qqplot(df['Moderate Positive Skew_1'],fit=True,line='45')
 plt.show()
-
+```
 # MODERATE NEGATIVE SKEW
-from sklearn.preprocessing import PowerTransformer
+```from sklearn.preprocessing import PowerTransformer
 transformer=PowerTransformer("yeo-johnson")
 
 df['ModerateNegativeSkew_2']=pd.DataFrame(transformer.fit_transform(df[['Moderate Negative Skew']]))
 
 sm.qqplot(df['ModerateNegativeSkew_2'],fit=True,line='45')
 plt.show()
-
-Quantile Transformation
+```
 
 # QUANTILE TRANSFORMATION
 # MODERATE NEGATIVE SKEW
+```
 from sklearn.preprocessing import QuantileTransformer
 qt = QuantileTransformer(output_distribution = 'normal')
 
