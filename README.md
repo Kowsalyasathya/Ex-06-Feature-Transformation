@@ -21,11 +21,12 @@ Print the transformed features.
 
 ## PROGRAM:
 
-# NAME  :KOWSALYA M
+ NAME  :KOWSALYA M
 
-# REGISTER NUMBER:212222230069.
+ REGISTER NUMBER:212222230069.
 
-# IMPORT LIBRARIES
+## IMPORT LIBRARIES
+
 ```
 import numpy as np
 import pandas as pd
@@ -35,7 +36,7 @@ import scipy.stats as stats
 from sklearn.preprocessing import QuantileTransformer
 
 ```
-# READ CSV FILES
+##  READ CSV FILES
 ```
 df=pd.read_csv("/content/Data_to_Transform.csv")
 df
