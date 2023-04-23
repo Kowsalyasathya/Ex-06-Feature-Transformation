@@ -21,10 +21,8 @@ Print the transformed features.
 
 PROGRAM:
 
-NAME:D.DHANUMALYA.
-
-REGISTER NUMBER:212222230030.
-Importing Libraries
+NAME  :KOWSALYA M
+REGISTER NUMBER:212222230069.
 
 # IMPORT LIBRARIES
 import numpy as np
